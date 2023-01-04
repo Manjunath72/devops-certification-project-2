@@ -1,5 +1,5 @@
 ---
-- hosts: 172.31.12.40
+- hosts: 172.31.33.111
   become: true
   tasks:
     - name: stop project2 docker container
@@ -11,8 +11,8 @@
       ignore_errors: yes
       
     - name: remove docker image
-      command: docker rmi sreeramakumar/project2:latest
+      command: docker rmi ravindra226/devopsproject2:latest
       ignore_errors: yes
       
-    - name: create container using sreeramakumar/project2:latest
-      command: docker run -d --name project2 -p 3000:3000 sreeramakumar/project2:latest
+    - name: create container using ravindra226/devopsproject2:latest
+      command: docker run -d --name project2 -p 3000:3000 ravindra226/devopsproject2:latest
