@@ -1,17 +1,17 @@
 pipeline {
     agent any
     
-    tools{
+    tools {
          maven 'maven3.9.1'
-         }
+    }
     stages {
         stage('clone git url') {
             steps {
                 git 'https://github.com/Manjunath72/devops-certification-project-2.git'
             }
         }
-        stage{
-           steps{
+        stage(Build) {
+           steps {
                sh 'mvn clean package'
            }
         }
