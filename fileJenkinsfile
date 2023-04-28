@@ -9,7 +9,7 @@ pipeline {
         }
         stage('docker image build and push to docker hub') {
             steps {
-                sh "chmod 400 de2.pem"
+                sh "chmod 400 test5.pem"
                 sh "sleep 10"
                 sh 'ansible all -i inventory.yaml -m ping --private-key=test5.pem -u ec2-user'
                 sh 'ansible-playbook -i inventory.yaml --private-key=test5.pem -u ec2-user dockerimagebuild.yaml'
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('docker installing on docker server') {
             steps {
-                sh "chmod 400 de2.pem"
+                sh "chmod 400 test5.pem"
                 sh "sleep 10"
                 sh 'ansible all -i inventory2.yaml -m ping --private-key=test5.pem -u ec2-user'
                 sh 'ansible-playbook -i inventory2.yaml --private-key=test5.pem -u ec2-user dockerinstall.yaml'
