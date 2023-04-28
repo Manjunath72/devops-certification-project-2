@@ -1,5 +1,5 @@
 ---
-- hosts: 172.31.33.111
+- hosts: 172.31.38.79
   become: true
   tasks:
     - name: stop project2 docker container
