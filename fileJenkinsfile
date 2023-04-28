@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('clone git url') {
             steps {
-                git 'https://github.com/sreeramakumar/devops-certification-project2.git'
+                git 'https://github.com/Manjunath72/devops-certification-project-2.git'
             }
         }
         stage('docker image build and push to docker hub') {
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 emailext attachLog: true, attachmentsPattern: '*.csv', body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
 
-Check console output at $BUILD_URL to view the results.''', recipientProviders: [buildUser()], subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'sriramkumar.n@gmail.com'
+Check console output at $BUILD_URL to view the results.''', recipientProviders: [buildUser()], subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'manjunath.h17@gmail.com'
             }
         }
     }
