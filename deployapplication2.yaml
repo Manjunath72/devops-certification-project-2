@@ -11,8 +11,8 @@
       ignore_errors: yes
       
     - name: remove docker image
-      command: docker rmi ravindra226/devopsproject2:latest
+      command: docker rmi manju1710/devopsproject2:latest
       ignore_errors: yes
       
-    - name: create container using ravindra226/devopsproject2:latest
-      command: docker run -d --name project2 -p 3000:3000 ravindra226/devopsproject2:latest
+    - name: create container using manju1710/devopsproject2:latest
+      command: docker run -d --name project2 -p 3000:3000 manju1710/devopsproject2:latest
